@@ -3,12 +3,13 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 
-const useStyles = makeStyles({
-  gameButton: { fontSize: "20px" },
-  question: {},
-});
-
 export default function Question(props) {
+  const useStyles = makeStyles({
+    gameButton: {
+      fontSize: props.dailyDouble ? "1.2rem" : "1rem",
+    },
+    question: {},
+  });
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -24,7 +25,6 @@ export default function Question(props) {
         onClick={handleOpen}
       >
         {props.value}
-        {props.dailyDouble.toString()}
       </Button>
     </div>
   );
